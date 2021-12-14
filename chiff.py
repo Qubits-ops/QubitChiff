@@ -28,7 +28,7 @@ def convertirEnBinaire(num):
             list.append(1)
         num//=2 #division euclidienne par 2
     return int(''.join(map(str, list[::-1])))
-def QubitChiff(message_a_chiff):
+def QubitChiff(message_a_chiff,cle):
     mess = []
     mess_chiff = []
     k = []
@@ -37,7 +37,7 @@ def QubitChiff(message_a_chiff):
         mess.append(i)
     mess = list(reversed(mess))
     for i in mess:
-        mess_chiff.append(ord(i))
+        mess_chiff.append(ord(i) + cle)
     for i in mess_chiff:
         k.append(convertirEnBinaire(i))
     for i in k:
